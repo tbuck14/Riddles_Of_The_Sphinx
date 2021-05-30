@@ -1,0 +1,23 @@
+<head>
+    <meta charset = "utf-8">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <header class="header">
+    <a href="/"><h1 class="logo">Riddles Of The Sphinx</h1></a>
+    </header>
+    <div class="form-box">
+        <div class = "input-boxes">
+        <% if @riddles.any? %>
+            <ul>
+            <% @riddles.each do |riddle| %>
+                <li><a href="/riddles/<%= riddle.id %>"class = "riddle"><%= riddle.name %></a></li>
+            <% end %>
+            </ul>
+        <% else %>
+            <p class = "riddle">There are currently no riddles to display.</p>
+        <% end %>
+        <a class="riddle" href="/riddles/new">Add a new riddle</a>
+        </div>  
+    </div>
+</body>

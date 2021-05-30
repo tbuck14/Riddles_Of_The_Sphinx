@@ -1,0 +1,29 @@
+<head>
+    <meta charset = "utf-8">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <header class="header">
+       <a href="/"><h1 class="logo">Riddles Of The Sphinx</h1></a>
+       <a href="/riddles" class="riddle_link"> ?Riddles? </a>
+    </header>
+    <div class="form-box">
+        <div class = "input-boxes">
+            <form action="/" method="post">
+
+                <img src="/images/sphinx.jpeg" width="220">
+                <h1 class = "riddle_num">Riddle <%= @riddle_number + 1%>.</h1>
+                <div class="riddle">
+                    <h3> <%= @riddles[@riddle_number].riddle %> </h3>
+                </div>
+
+                <div class="answer">
+                    <label>Enter Answer: </label>
+                    <input class="input" type="text" name="guess" autocomplete="off">
+                </div>
+    
+                <button type="submit" class = "button">Go!</button>
+            </form>
+        </div>  
+    </div>
+</body>
